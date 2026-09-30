@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+        font-family: Recoleta;
+        src: url("Recoleta.otf");
+    }
+    body {
+        background: whitesmoke;
+    }
+    #page {
+        width: 928px;
+        background: white;
+        margin: 0 auto;
+        padding: 48px;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+    }
+    h1 {
+        font: 48pt/1.0em 'Dancing Script', cursive;
+        text-align: center;
+        text-shadow: 2px 3px 6px darkorange;
+    }
+    p.intro {
+        font-family: Recoleta, serif;
+        font-size: 14pt;
+        line-height: 1.4em;
+        text-align: center;
+    }
+
+    .portfolio-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 24px;
+        margin-top: 36px;
+    }
+
+    figure {
+        margin: 0;
+        width: 200px;
+        text-align: center;
+        font-family: Recoleta, serif;
+    }
+
+    figure img {
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        border: 1px solid black;
+        box-shadow: 2px 3px 6px gray;
+        transition: transform 0.2s ease;
+    }
+
+    figure img:hover {
+        transform: scale(1.05);
+    }
+
+    figcaption {
+        margin-top: 8px;
+        font-size: 11pt;
+        line-height: 1.3em;
+        color: #333;
+    }
+
+    figcaption .title {
+        display: block;
+        font-weight: bold;
+        font-size: 12pt;
+    }
+</style>
+</head>
+
+<body>
+<div id="page">
+
+    <h1>Portfolio</h1>
+    <p class="intro">A few pieces I've made, in different mediums. Click any thumbnail to see it in full detail.</p>
+
+    <div class="portfolio-container">
+
+        <figure>
+            <a href="20241105_115348.jpg">
+                <img src="drawing-thumb.jpg" alt="Charcoal still life drawing of a pitcher with flowers">
+            </a>
+            <figcaption>
+                <span class="title">Still Life with Pitcher</span>
+                Charcoal on paper, 2024
+            </figcaption>
+        </figure>
+
+        <figure>
+            <a href="tb_mockup__1_.png">
+                <img src="menu-thumb.jpg" alt="Taco Bell menu design mockup">
+            </a>
+            <figcaption>
+                <span class="title">Taco Bell Menu Redesign</span>
+                Digital mockup, restaurant branding project
+            </figcaption>
+        </figure>
+
+        <figure>
+            <a href="dwk__1_.png">
+                <img src="bookcover-thumb.jpg" alt="Diary of a Wimpy Kid parody book cover design">
+            </a>
+            <figcaption>
+                <span class="title">Diary of a Wimpy Kid: The Secret Admirer</span>
+                Book cover mockup design
+            </figcaption>
+        </figure>
+
+    </div>
+
+</div>
+</body>
+</html>
