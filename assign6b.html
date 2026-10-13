@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Photo Grid</title>
+<style>
+    .photo-grid {
+        display: grid;
+        grid-template: 255px 576px 255px / repeat(2, 384px);
+        gap: 4px;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .photo-grid figure {
+        margin: 0;
+        position: relative;
+    }
+
+    .photo-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .photo-grid figcaption {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.7);
+        font-size: 9pt;
+        padding: 2px 8px;
+    }
+
+    .photo-grid figcaption a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .photo-grid figure:nth-child(1) {
+        grid-area: 1/1/2/3;
+    }
+
+    .photo-grid figure:nth-child(2) {
+        grid-area: 2/1/3/2;
+    }
+
+    .photo-grid figure:nth-child(3) {
+        grid-area: 2/2/3/3;
+    }
+
+    .photo-grid figure:nth-child(4) {
+        grid-area: 3/1/4/3;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="photo-grid">
+        <figure>
+            <img src="pastel-sunset.jpg" alt="Abstract pastel sunset in orange and teal">
+            <figcaption>Photo: <a href="https://unsplash.com/@mavi_atlas">Mavi Atlas</a></figcaption>
+        </figure>
+        <figure>
+            <img src="pink-building.jpg" alt="Pink building facade with balconies and a tree">
+            <figcaption>Photo: <a
