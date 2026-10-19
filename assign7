@@ -75,7 +75,6 @@
         font-size: 12pt;
     }
 
-    /* --- Contact form --- */
     form {
         width: 400px;
         margin: 48px auto 0;
