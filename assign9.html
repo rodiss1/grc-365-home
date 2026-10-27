@@ -1,0 +1,304 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+        font-family: Recoleta;
+        src: url("Recoleta.otf");
+    }
+
+    body {
+        background: whitesmoke;
+    }
+
+    #page {
+        width: 928px;
+        max-width: 100%;
+        box-sizing: border-box;
+        background: white;
+        margin: 0 auto;
+        padding: 48px;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+    }
+
+    h1 {
+        font: 48pt/1.0em 'Dancing Script', cursive;
+        text-align: center;
+        text-shadow: 2px 3px 6px #9b8bc4;
+    }
+
+    p.intro {
+        font-family: Recoleta, serif;
+        font-size: 14pt;
+        line-height: 1.4em;
+        text-align: center;
+    }
+
+    .portfolio-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 24px;
+        margin-top: 36px;
+    }
+
+    figure {
+        margin: 0;
+        width: 200px;
+        max-width: 100%;
+        text-align: center;
+        font-family: Recoleta, serif;
+    }
+
+    figure img {
+        width: 200px;
+        max-width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        border: 1px solid black;
+        box-shadow: 2px 3px 6px gray;
+        transition: transform 0.2s ease;
+    }
+
+    figure img:hover {
+        transform: scale(1.03);
+    }
+
+    figcaption {
+        margin-top: 8px;
+        font-size: 11pt;
+        line-height: 1.3em;
+        color: #333;
+    }
+
+    figcaption .title {
+        display: block;
+        font-weight: bold;
+        font-size: 12pt;
+    }
+
+    /* --- Contact form --- */
+    form {
+        width: 400px;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 48px auto 0;
+        background: lavender;
+        border: 1px solid dimgray;
+        border-radius: 6px;
+        box-shadow: 2px 3px 6px #9b8bc4;
+        padding: 24px;
+        font-family: sans-serif;
+        font-size: 11pt;
+    }
+
+    fieldset {
+        margin-bottom: 16px;
+        border: 1px solid dimgray;
+        border-radius: 6px;
+    }
+
+    legend {
+        font-weight: bold;
+        padding: 0 6px;
+    }
+
+    form label {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 4px;
+        font-family: sans-serif;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+        border: 1px solid gray;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    .inline-label {
+        display: inline;
+        margin: 0 0 0 6px;
+        font-weight: normal;
+    }
+
+    .radio-row, .checkbox-row {
+        margin-top: 8px;
+    }
+
+    input[type="submit"] {
+        margin-top: 16px;
+        padding: 8px 20px;
+        border: 1px solid dimgray;
+        border-radius: 4px;
+        background: white;
+        font-size: inherit;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background: whitesmoke;
+    }
+
+    /* --- Responsive design for phones --- */
+    @media only screen and (max-width: 750px) {
+        #page {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 42pt;
+        }
+
+        p.intro {
+            font-size: 16pt;
+            line-height: 1.6em;
+        }
+
+        .portfolio-container {
+            display: block;
+        }
+
+        figure {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        figure img {
+            width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            font-size: 13pt;
+            line-height: 1.5em;
+        }
+
+        figcaption .title {
+            font-size: 14pt;
+        }
+
+        form {
+            width: 100%;
+            font-size: 13pt;
+        }
+    }
+</style>
+</head>
+
+<body>
+<div id="page">
+
+    <h1>Portfolio</h1>
+    <p class="intro">A few pieces I've made, in different mediums. Click any thumbnail to see it in full detail.</p>
+
+    <div class="portfolio-container">
+
+        <figure>
+            <a href="20241105_115348.jpg">
+                <img src="drawing-thumb.jpg" alt="Charcoal still life drawing of a pitcher with flowers">
+            </a>
+            <figcaption>
+                <span class="title">Still Life with Pitcher</span>
+                Charcoal on paper, 2024
+            </figcaption>
+        </figure>
+
+        <figure>
+            <a href="tb mockup (1).png">
+                <img src="menu-thumb.jpg" alt="Taco Bell menu design mockup">
+            </a>
+            <figcaption>
+                <span class="title">Taco Bell Menu Redesign</span>
+                Digital mockup, restaurant branding project
+            </figcaption>
+        </figure>
+
+        <figure>
+            <a href="dwk (1).png">
+                <img src="bookcover-thumb.jpg" alt="Diary of a Wimpy Kid parody book cover design">
+            </a>
+            <figcaption>
+                <span class="title">Diary of a Wimpy Kid: The Secret Admirer</span>
+                Book cover mockup design
+            </figcaption>
+        </figure>
+
+    </div>
+
+    <form>
+
+        <fieldset>
+            <legend>Your Information</legend>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </fieldset>
+
+        <fieldset>
+            <legend>Your Message</legend>
+
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+                <option value="general">General Inquiry</option>
+                <option value="commission">Commission Request</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" rows="5"></textarea>
+
+            <div class="radio-row">
+                <span>Preferred reply method:</span><br>
+
+                <input type="radio" id="reply-email" name="reply" value="email">
+                <label class="inline-label" for="reply-email">Email</label><br>
+
+                <input type="radio" id="reply-phone" name="reply" value="phone">
+                <label class="inline-label" for="reply-phone">Phone</label>
+            </div>
+
+            <div class="checkbox-row">
+                <span>I'm interested in:</span><br>
+
+                <input type="checkbox" id="interest-portfolio" name="interest" value="portfolio">
+                <label class="inline-label" for="interest-portfolio">Portfolio pieces</label><br>
+
+                <input type="checkbox" id="interest-commission" name="interest" value="commission">
+                <label class="inline-label" for="interest-commission">Commission work</label><br>
+
+                <input type="checkbox" id="interest-updates" name="interest" value="updates">
+                <label class="inline-label" for="interest-updates">Email updates</label>
+            </div>
+        </fieldset>
+
+        <input type="submit" value="Send Message">
+
+    </form>
+
+</div>
+</body>
+</html>
