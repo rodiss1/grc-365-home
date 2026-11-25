@@ -22,8 +22,27 @@
     }
     h1 {
         font: 48pt/1.0em 'Dancing Script', cursive;
-        text-align: center;
-        text-shadow: 2px 3px 6px darkorange;
+        text-shadow: 2px 3px 6px #9b8bc4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
+
+    @keyframes twinkle {
+        0%, 100% {
+            transform: translateY(0) scale(1);
+            opacity: 0.7;
+        }
+        50% {
+            transform: translateY(-14px) scale(1.15);
+            opacity: 1;
+        }
+    }
+
+    .sparkle {
+        width: 64px;
+        animation: twinkle 2.4s ease-in-out infinite;
     }
     p.intro {
         font-family: Recoleta, serif;
@@ -48,19 +67,20 @@
         font-family: Recoleta, serif;
     }
 
-figure img {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-    border: 1px solid black;
-    box-shadow: 2px 3px 6px gray;
-    transition: transform 0.2s ease;
-}
+    figure img {
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        border: 1px solid black;
+        box-shadow: 2px 3px 6px gray;
+        transition: transform 0.2s ease;
+    }
 
-figure img:hover {
-    transform: scale(1.03);
-}
+    figure img:hover {
+        transform: scale(1.03);
+    }
+
     figcaption {
         margin-top: 8px;
         font-size: 11pt;
@@ -73,13 +93,100 @@ figure img:hover {
         font-weight: bold;
         font-size: 12pt;
     }
+
+    form {
+        width: 400px;
+        margin: 48px auto 0;
+        background: lavender;
+        border: 1px solid dimgray;
+        border-radius: 6px;
+        box-shadow: 2px 3px 6px #9b8bc4;
+        padding: 24px;
+        font-family: sans-serif;
+        font-size: 11pt;
+    }
+
+    fieldset {
+        margin-bottom: 16px;
+        border: 1px solid dimgray;
+        border-radius: 6px;
+    }
+
+    legend {
+        font-weight: bold;
+        padding: 0 6px;
+    }
+
+    form label {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 4px;
+        font-family: sans-serif;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+        border: 1px solid gray;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    .inline-label {
+        display: inline;
+        margin: 0 0 0 6px;
+        font-weight: normal;
+    }
+
+    .radio-row, .checkbox-row {
+        margin-top: 8px;
+    }
+
+    input[type="submit"] {
+        margin-top: 16px;
+        padding: 8px 20px;
+        border: 1px solid dimgray;
+        border-radius: 4px;
+        background: white;
+        font-size: inherit;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background: whitesmoke;
+    }
+
+    #text-size-btn {
+        display: block;
+        margin: 24px auto 0;
+        padding: 8px 20px;
+        border: 1px solid dimgray;
+        border-radius: 4px;
+        background: white;
+        font-family: sans-serif;
+        font-size: 11pt;
+        cursor: pointer;
+    }
+
+    #text-size-btn:hover {
+        background: whitesmoke;
+    }
 </style>
 </head>
 
 <body>
 <div id="page">
 
-    <h1>Portfolio</h1>
+    <h1>Portfolio<img class="sparkle" src="star-sparkle.png" alt="Twinkling star"></h1>
     <p class="intro">A few pieces I've made, in different mediums. Click any thumbnail to see it in full detail.</p>
 
     <div class="portfolio-container">
@@ -116,6 +223,79 @@ figure img:hover {
 
     </div>
 
+    <form>
+
+        <fieldset>
+            <legend>Your Information</legend>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </fieldset>
+
+        <fieldset>
+            <legend>Your Message</legend>
+
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+                <option value="general">General Inquiry</option>
+                <option value="commission">Commission Request</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" rows="5"></textarea>
+
+            <div class="radio-row">
+                <span>Preferred reply method:</span><br>
+
+                <input type="radio" id="reply-email" name="reply" value="email">
+                <label class="inline-label" for="reply-email">Email</label><br>
+
+                <input type="radio" id="reply-phone" name="reply" value="phone">
+                <label class="inline-label" for="reply-phone">Phone</label>
+            </div>
+
+            <div class="checkbox-row">
+                <span>I'm interested in:</span><br>
+
+                <input type="checkbox" id="interest-portfolio" name="interest" value="portfolio">
+                <label class="inline-label" for="interest-portfolio">Portfolio pieces</label><br>
+
+                <input type="checkbox" id="interest-commission" name="interest" value="commission">
+                <label class="inline-label" for="interest-commission">Commission work</label><br>
+
+                <input type="checkbox" id="interest-updates" name="interest" value="updates">
+                <label class="inline-label" for="interest-updates">Email updates</label>
+            </div>
+        </fieldset>
+
+        <input type="submit" value="Send Message">
+
+    </form>
+
+    <button id="text-size-btn" onclick="increaseTextSize()">Increase Text Size</button>
+
 </div>
+
+<script>
+    let textSizeLevel = 0;
+    const textSizes = ["14pt", "18pt", "22pt", "26pt"];
+
+    function increaseTextSize() {
+        textSizeLevel++;
+        if (textSizeLevel >= textSizes.length) {
+            textSizeLevel = 0;
+        }
+        const paragraphs = document.querySelectorAll("p");
+        paragraphs.forEach(function (p) {
+            p.style.fontSize = textSizes[textSizeLevel];
+        });
+    }
+</script>
+
 </body>
 </html>
